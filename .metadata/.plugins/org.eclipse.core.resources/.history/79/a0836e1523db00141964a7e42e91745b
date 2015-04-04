@@ -1,0 +1,32 @@
+Ti.UI.setBackgroundColor("#fff");
+
+var mainWindow = Ti.UI.createWindow({
+	backgroundColor : "#6dd1f7"
+});
+
+var foodDisplayView = Ti.UI.createView({
+	backgroundColor: "#dbffe4",
+	borderRadius: 2,
+	borderWidth: 1,
+	borderColor: "#fff",
+	width: "80%",
+	height: "50%",
+	top: 40
+	
+});
+
+var nextButton = Ti.UI.createView({
+	backgroundColor: "#ffc88c",
+	top: foodDisplayView.bottom + 40,
+	width: "20%",
+	height: "10%",
+	left: 40
+});
+
+
+
+
+
+
+mainWindow.add(foodDisplayView, nextButton);
+mainWindow.open();
