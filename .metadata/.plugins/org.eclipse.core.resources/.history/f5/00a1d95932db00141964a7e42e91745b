@@ -1,0 +1,27 @@
+var favoriteFruits = ["Apples", "Bananas", "Plums", "Oranges", "Grapes"];
+
+var fruitCounter = 0;
+
+
+
+
+
+
+var nextFruit = function(){
+	textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+	fruitCounter++;
+};
+
+var previousFruit = function(){
+	if(fruitCounter = -1){
+		
+	}
+	textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+	fruitCounter--;
+};
+
+nextButton.addEventListener("click", nextFruit);
+
+
+
+previousButton.addEventListener("click", previousFruit);
