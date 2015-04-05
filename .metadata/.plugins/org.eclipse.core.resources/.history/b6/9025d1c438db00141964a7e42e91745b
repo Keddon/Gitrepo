@@ -1,4 +1,4 @@
-var favoriteFruits = ["1. Apples", "2. Bananas", "3. Plums", "4. Oranges", "5. Grapes"];
+var favoriteFruits = ["Apples", "Bananas", "Plums", "Oranges", "Grapes"];
 
 var fruitCounter = 0;
 
