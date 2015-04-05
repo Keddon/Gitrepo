@@ -1,0 +1,28 @@
+var favoriteFruits = ["Apples", "Bananas", "Plums", "Oranges", "Grapes"];
+
+var fruitCounter = 0;
+
+
+var nextFruit = function(){
+		if(fruitCounter = 4){
+		textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+		fruitCounter = 0;
+		}else{
+		textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+		fruitCounter++;};
+};
+
+var previousFruit = function(){
+		if(fruitCounter = 0){
+		textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+		fruitCounter = 4;
+		}else{
+		textLabelmain.text = favoriteFruits[Number(fruitCounter)];
+		fruitCounter--;};
+};
+
+nextButton.addEventListener("click", nextFruit);
+
+
+
+previousButton.addEventListener("click", previousFruit);
