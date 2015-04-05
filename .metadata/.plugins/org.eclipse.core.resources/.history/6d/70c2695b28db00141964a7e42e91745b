@@ -31,29 +31,21 @@ var previousButton = Ti.UI.createView({
 	left: 40
 });
 
-var textLabelmain = Ti.UI.createLabel({
-	text: "favoriteFruits[0]",
-	color: "#000",
-	font: (fontSize= 14, fontFamily= "trebuchetMS")
-}); 
-
-var textLabelnext = Ti.UI.createLabel({
+var textLablenext = Ti.UI.createLabel({
 	text: "Next",
 	color: "#fff",
 	font: (fontSize= 14, fontFamily= "trebuchetMS")
 });
 
-var textLabelprevious = Ti.UI.createLabel({
+var textLableprevious = Ti.UI.createLabel({
 	text: "Previous",
 	color: "#fff",
 	font: (fontSize= 14, fontFamily= "trebuchetMS")
 });
 
-
 var loadFrits = require("appFunctions");
 
 mainWindow.add(foodDisplayView, nextButton, previousButton);
-foodDisplayView.add(textLabelmain);
-nextButton.add(textLabelnext);
-previousButton.add(textLabelprevious);
+nextButton.add(textLablenext);
+previousButton.add(textLableprevious);
 mainWindow.open();

@@ -53,7 +53,7 @@ var textLabelprevious = Ti.UI.createLabel({
 var loadFrits = require("appFunctions");
 
 mainWindow.add(foodDisplayView, nextButton, previousButton);
-foodDisplayView.add(textLabelmain);
+foodDisplayView.add(textLabelMain);
 nextButton.add(textLabelnext);
 previousButton.add(textLabelprevious);
 mainWindow.open();
