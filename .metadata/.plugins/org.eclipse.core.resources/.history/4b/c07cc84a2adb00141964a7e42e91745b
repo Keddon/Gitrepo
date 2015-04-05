@@ -32,7 +32,7 @@ var previousButton = Ti.UI.createView({
 });
 
 var textLabelmain = Ti.UI.createLabel({
-	text: "Click to see my favorit fruits!",
+	text: "favoriteFruits[0]",
 	color: "#000",
 	font: (fontSize= 14, fontFamily= "trebuchetMS")
 }); 
