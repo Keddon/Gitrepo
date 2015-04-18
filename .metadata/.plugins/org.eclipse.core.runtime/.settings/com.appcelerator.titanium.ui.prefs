@@ -1,7 +1,9 @@
 =run
 Campbell_Keddon_Project1\:launchMode=run
-Campbell_Keddon_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.iphone.launchShortcut.33DE6BC5-DF8C-4AC2-8892-34AE5A2F4677
-LAST_LAUNCH_TIMESTAMP=1428188202424
+Campbell_Keddon_Project1\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.F14E6894-10A7-44AF-88CA-E29E0C0F43E9
+Campbell_Keddon_Project2\:launchMode=run
+Campbell_Keddon_Project2\:launchShortcut=com.appcelerator.titanium.mobile.ui.ios.simulator.ipad.launchShortcut.F14E6894-10A7-44AF-88CA-E29E0C0F43E9
+LAST_LAUNCH_TIMESTAMP=1429398164522
 eclipse.preferences.version=1
 preference.show.console.onError=true
 preference.studio.perspective.version=103
