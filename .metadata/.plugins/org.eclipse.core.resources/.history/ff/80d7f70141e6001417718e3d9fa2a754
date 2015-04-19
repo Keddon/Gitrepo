@@ -1,6 +1,6 @@
 Ti.UI.setBackgroundColor("#fff");
 
-var fruits = [{title:"Apples", infoAbout: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
+var fruits = [{title:"Apples", about: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
 var veggie = [{title:"Carrots"},{title:"Broccoli"},{title:"Cabbage"},{title:"Turnip"},{title:"Onion"},];
 
 var mainWindow = Ti.UI.createWindow({

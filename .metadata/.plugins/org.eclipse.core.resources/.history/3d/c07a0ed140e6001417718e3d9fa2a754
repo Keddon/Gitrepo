@@ -1,6 +1,6 @@
 Ti.UI.setBackgroundColor("#fff");
 
-var fruits = [{title:"Apples", infoAbout: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
+var fruits = [{title:"Apples", about: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
 var veggie = [{title:"Carrots"},{title:"Broccoli"},{title:"Cabbage"},{title:"Turnip"},{title:"Onion"},];
 
 var mainWindow = Ti.UI.createWindow({
@@ -80,13 +80,13 @@ var info = function(){
 		text: this.title,
 		color: "8e17ea",
 		font: (fontSize = 34, fontFamily = "trebuchetMS", fontWeight = "bold"),
-		top : 20
+		top : 10
 	});
 		var infoAboutLabel = Ti.UI.createLabel({
 		text: this.about,
-		color: "394f4e",
-		font: (fontSize = 44, fontFamily = "trebuchetMS"),
-		top : 50
+		color: "e0dfe1",
+		font: (fontSize = 24, fontFamily = "trebuchetMS"),
+		top : 30
 	});
 		var infoView = Ti.UI.createView({
 		backgroundColor: "#dbffe4",

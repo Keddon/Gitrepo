@@ -1,6 +1,6 @@
 Ti.UI.setBackgroundColor("#fff");
 
-var fruits = [{title:"Apples", infoAbout: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
+var fruits = [{title:"Apples", about: "test teste tassstrruuuuuu"},{title:"Bananas"},{title:"Plums"},{title:"Grapes"},{title:"Oranges"}];
 var veggie = [{title:"Carrots"},{title:"Broccoli"},{title:"Cabbage"},{title:"Turnip"},{title:"Onion"},];
 
 var mainWindow = Ti.UI.createWindow({
@@ -79,28 +79,24 @@ var info = function(){
 		var infoViewLabel = Ti.UI.createLabel({
 		text: this.title,
 		color: "8e17ea",
-		font: (fontSize = 34, fontFamily = "trebuchetMS", fontWeight = "bold"),
-		top : 20
+		font: (fontSize = 24, fontFamily = "trebuchetMS", fontWeight = "bold"),
+		top : 40
 	});
 		var infoAboutLabel = Ti.UI.createLabel({
 		text: this.about,
-		color: "394f4e",
-		font: (fontSize = 44, fontFamily = "trebuchetMS"),
-		top : 50
+		color: "e0dfe1",
+		font: (fontSize = 24, fontFamily = "trebuchetMS"),
+		top : 80,
+		left: 5,
+		right:5
+		
 	});
 		var infoView = Ti.UI.createView({
 		backgroundColor: "#dbffe4",
 		borderColor: "#fff",
 		width: "100%",
-		height: 40,
+		height: 60,
 		top: 0
-	});
-		var infoAboutView = Ti.UI.createView({
-		backgroundColor: "#dbffe4",
-		borderColor: "1fdfd4",
-		width: "100%",
-		height: "60%",
-
 	});
 	
 	var exitButton = Ti.UI.createLabel({
@@ -121,9 +117,8 @@ var info = function(){
 	
 	exitButton.addEventListener("click", closeInfo);
 	
-	infoAboutView.add(infoAboutLabel);
 	infoView.add(infoViewLabel);
-	infoWindow.add(infoView,exitButton,infoAboutView);
+	infoWindow.add(infoView,infoAboutLabel,exitButton);
 	infoWindow.open({transition:Ti.UI.iPhone.AnimationStyle.CURL_UP});
 };
 
