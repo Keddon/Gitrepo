@@ -1,0 +1,5 @@
+var mainActivity = Ti.UI.createWindow({
+	backgroundColor: "528bb2",
+});
+
+mainActivity.open();

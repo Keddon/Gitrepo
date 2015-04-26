@@ -1,0 +1,4 @@
+/**
+ * @author Keddon Campbell
+ */
+Ti.UI.setBackgroundColor("#fff");

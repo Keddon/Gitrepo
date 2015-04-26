@@ -1,0 +1,6 @@
+var mainGallery = Ti.UI.createWindow({
+	backgroundColor: "528bb2",
+
+});
+
+mainGallery.open
