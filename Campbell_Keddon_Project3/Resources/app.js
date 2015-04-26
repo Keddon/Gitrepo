@@ -1,9 +1,22 @@
 Ti.UI.setBackgroundColor("#fff");
 var galleria = require("gallery");
 
+
+var deviceWth = Ti.Platform.displayCaps.platformWith;
+var deviceHgt = Ti.Platform.displayCaps.platformHeight;
+var itemCount = 30;
+var itemRow = 4;
+var margin = 5;
+var canvasWth = (10);
+var itemsize = "65";
+var imagesFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+var imagesFile = imagesFolder.getDirectoryListing();
+console.log(imagesFile);
+
 var mainActivity = Ti.UI.createWindow({
 	backgroundColor: "528bb2",
-	hasChild : true
+	hasChild : true,
+
 });
 
 var mainActivityView = Ti.UI.createView({
@@ -36,6 +49,7 @@ var galleryText = Ti.UI.createLabel({
  var mainGallery = function(){
 
  	 console.log("here!");
+ 	 console.log(imagesFile);
   	
  	 var GalleryWindow = Ti.UI.createWindow({
 	 backgroundcolor: "727272",
@@ -54,44 +68,61 @@ var galleryText = Ti.UI.createLabel({
  		
 	 });
 	 
-	 for (var i=0; i<itemCount; i++){
-	var viewer = Ti.UI.createView({
-		backgroundColor: "fff",
-		top: margin,
-		left: margin,
-		width: itemsize,
-		height: itemsize,
-//		name: i,
+	 for (var i=0; i<imagesFile.length; i++){
+	 	
+		var viewer = Ti.UI.createView({
+			backgroundColor: "fff",
+			top: margin,
+			left: margin,
+			right:margin,
+			width: itemsize,
+			height: itemsize,
+
 	});
-	var text = Ti.UI.createLabel({
-		text: i+1,
-		color: "000",
+		var thumb = Ti.UI.createImageView({
+			image: "images/" + imagesFile[i],
+			top: 0,
+			width: viewer.width*2,
+			name: imagesFile[i],
 	});
-	viewer.add(text);
-	GalleryView.add(viewer);
-}
-	 
-	 GalleryWindow.add(GalleryView);
-	 GalleryView.addEventListener("click", function(listen) {
-//	   console.log(listen.source.name);
-	 });
+		GalleryView.add(viewer);
+		viewer.add(thumb);
+	} 
+		GalleryWindow.add(GalleryView);
+		GalleryView.addEventListener("click", function(imager){
+			console.log(imager.source.name);
+			
+			var imageWindow = Ti.UI.createWindow({
+				backgroundColor: "66337e",
+				width: "100%",
+				height: "100%"
+			});
+			var imageWindowView = Ti.UI.createImageView({
+				image: "images/" + imager.source.name
+				
+			});
+			var imageCloseBTN = Ti.UI.createView({
+				width:"100%",
+				backgroundcolor: "47aef4"
+			});
+			var imageCloseLB = Ti.UI.createLabel({
+				bottom: 20,
+				text: imager.source.name + " click to exit",
+				textColor: "fff",
+				size: 20,
+				
+			});
+			
+			imageCloseLB.addEventListener("click", function(close){
+				imageWindow.close({transition:Ti.UI.iPhone.AnimationStyle.CURL_DOWN});
+			});
+			imageCloseBTN.add(imageCloseLB);
+			imageWindowView.add(imageCloseBTN);
+			imageWindow.add(imageWindowView);
+			imageWindow.open({transition:Ti.UI.iPhone.AnimationStyle.CURL_UP});
+		});
      GalleryWindow.open({transition:Ti.UI.iPhone.AnimationStyle.CURL_UP});
- };
-
-//ships.addEventListener("click", function(event){
-//	console.log(event.source.title);
-//});
-
-
-// var apploader = require("app");
-var deviceWth = Ti.Platform.displayCaps.platformWith;
-var deviceHgt = Ti.Platform.displayCaps.platformHeight;
-var itemCount = 30;
-var itemRow = 4;
-var margin = 10;
-var canvasWth = (10);
-var itemsize = "65";
-
+};
 
 
 
