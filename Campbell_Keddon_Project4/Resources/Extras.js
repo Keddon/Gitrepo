@@ -80,22 +80,46 @@ var resultButton = Ti.UI.createView({
 	backgroundColor: "000",
 	borderRadius: 15
 });
+
+var noune = theNoun.value;
+var verbe = theVerb.value;
+var placeu = thePlace.value;
+
 var theResult = Ti.UI.createLabel({
-	text: theNoun.value +" laught to see such fun as the fish "+ theVerb.value +" all night with the shark all night around the "+ thePlace.value ,
+	text: noune +" laught to see such fun as the fish "+ verbe +" all night with the shark all night around the "+ placeu,
 });
 
 		function MakeExtra(){	
 					
-					
 					resultButton.add(resultLabel);	
-					extraViewplace.add(thePlace);
-			        extraViewverb.add(theVerb);		
-					extraViewnoun.add(theNoun);
+					extraViewplace.add(thePlace,placelabel);
+			        extraViewverb.add(theVerb,verblabel);		
+					extraViewnoun.add(theNoun,nounlabel);
 					extraView.add(extraViewnoun,resultButton,extraViewverb,extraViewplace);
 					extraWindow.add(extraView);
 					navWin.openWindow(extraWindow);
 					};
 
-
+	function generate(){
+		var gen =Ti.UI.createWindow({
+			backgroundColor: "fff",
+		});
+		var genview = Ti.UI.createView({
+			width: "100%",
+			top: 10,
+			height: "80%"
+		});
+		var genlabel = Ti.UI.createLabel({
+			text: theResult.text
+		});
+		
+ noune = theNoun.value;
+ verbe = theVerb.value;
+ placeu = thePlace.value;
+		genview.add(genlabel);
+		gen.add(genview);
+		navWin.openWindow(gen);
+	};
 
 extrasButton.addEventListener("click", MakeExtra);
+resultButton.addEventListener("click", generate);
