@@ -1,0 +1,103 @@
+/**
+ * @author Keddon Campbell
+ */
+
+var fruits = [{title:"Apples", infoAbout: "The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple"},{title:"Bananas", infoAbout: "A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa."},{title:"Plums", infoAbout: "A plum is a fruit of the subgenus Prunus of the genus Prunus. The subgenus is distinguished from other subgenera (peaches, cherries, bird cherries, etc.) in the shoots having a terminal bud and solitary side buds"},{title:"Grapes", infoAbout: "A grape is a fruiting berry of the deciduous woody vines of the botanical genus Vitis. Grapes can be eaten raw or they can be used for making wine, jam, juice, jelly, grape seed extract, raisins, vinegar, and grape seed oil. Grapes are a non-climacteric type of fruit, generally occurring in clusters."},{title:"Oranges", infoAbout: "The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae."}];
+
+var veggie = [{title:"Carrots", infoAbout: "The carrot (Daucus carota subsp. sativus) is a root vegetable, usually orange in colour, though purple, red, white, and yellow varieties exist. It has a crisp texture when fresh"},{title:"Broccoli", infoAbout: "Broccoli is an edible green plant in the cabbage family whose large, flowering head is eaten as a vegetable. The word broccoli comes from the Italian plural of broccolo, which means the flowering crest of a cabbage, and is the diminutive form of brocco, meaning small nail or sprout."},{title:"Cabbage", infoAbout: "Cabbage (Brassica oleracea or variants) is a leafy green or purple biennial plant, grown as an annual vegetable crop for its dense-leaved heads"},{title:"Turnip", infoAbout: "The turnip or white turnip (Brassica rapa subsp. rapa) is a root vegetable commonly grown in temperate climates worldwide for its white, bulbous taproot. "},{title:"Onion", infoAbout: "The onion (Allium cepa) (Latin 'cepa' = onion), also known as the bulb onion or common onion, is used as a vegetable and is the most widely cultivated species of the genus Allium."},];
+
+var AllFoods = {
+	"fruits" : {
+		"MainTitle": "Fruits",
+		"fruitsList":[
+			{
+				"name":"Apple",
+				"about":"The apple tree (Malus domestica) is a deciduous tree in the rose family best known for its sweet, pomaceous fruit, the apple"
+			},
+			{
+				"name":"Banana",
+				"about":"A banana is an edible fruit, botanically a berry, produced by several kinds of large herbaceous flowering plants in the genus Musa."
+			},
+			{
+				"name":"Plums",
+				"about":"A plum is a fruit of the subgenus Prunus of the genus Prunus. The subgenus is distinguished from other subgenera (peaches, cherries, bird cherries, etc.) in the shoots having a terminal bud and solitary side buds"
+			},
+			{
+				"name":"Grapes",
+				"about":"A grape is a fruiting berry of the deciduous woody vines of the botanical genus Vitis. Grapes can be eaten raw or they can be used for making wine, jam, juice, jelly, grape seed extract, raisins, vinegar, and grape seed oil. Grapes are a non-climacteric type of fruit, generally occurring in clusters."
+			},
+			{
+				"name":"Orange",
+				"about":"The orange (specifically, the sweet orange) is the fruit of the citrus species Citrus × sinensis in the family Rutaceae."
+			},
+		]
+	},
+	"veggies" : {
+		"MainTitle": "Veggies",
+		"veggieList" :[
+					{
+				"name":"Carrot",
+				"about":"The carrot (Daucus carota subsp. sativus) is a root vegetable, usually orange in colour, though purple, red, white, and yellow varieties exist. It has a crisp texture when fresh"
+			},
+			{
+				"name":"Broccoli",
+				"about":"Broccoli is an edible green plant in the cabbage family whose large, flowering head is eaten as a vegetable. The word broccoli comes from the Italian plural of broccolo, which means the flowering crest of a cabbage, and is the diminutive form of brocco, meaning small nail or sprout."
+			},
+			{
+				"name":"Cabbage",
+				"about":"Cabbage (Brassica oleracea or variants) is a leafy green or purple biennial plant, grown as an annual vegetable crop for its dense-leaved heads"
+			},
+			{
+				"name":"Turnip",
+				"about":"The turnip or white turnip (Brassica rapa subsp. rapa) is a root vegetable commonly grown in temperate climates worldwide for its white, bulbous taproot. "
+			},
+			{
+				"name":"Onion",
+				"about":"The onion (Allium cepa) (Latin 'cepa' = onion), also known as the bulb onion or common onion, is used as a vegetable and is the most widely cultivated species of the genus Allium."
+			}
+		]	
+	}
+};
+
+var ranColor = ["f0d1c5","f0ebc5","cdf0c5","c5edf0","e4c5f0","f0c5c8"];
+
+
+mainWindow.addEventListener("click", function(select){
+			console.log(select.source.name);
+			
+			if (select.source.name === "Gallery") {
+						
+				var gallWindow = Ti.UI.createWindow({
+					backgroundColor: "fff",
+					title: "Gallery",});
+				
+				navWin.openWindow(gallWindow);
+		
+			} else if(select.source.name === "Details") {
+										
+				var detWindow = Ti.UI.createWindow({
+					backgroundColor: "fff",
+					title: "Details",});
+				
+				navWin.openWindow(detWindow);
+			} else if(select.source.name === "Extras") {
+									
+				var extWindow = Ti.UI.createWindow({
+					backgroundColor: "fff",
+					title: "Extras",});
+				
+				navWin.openWindow(extWindow);
+			};
+				function randomXToY(minVal,maxVal)
+				{ var randVal = minVal+(Math.random()*(maxVal-minVal)); 
+				//console.log(randVal);
+				return Math.round(randVal); 
+				  			}
+  				console.log(randomXToY(0,10));
+				
+				
+ });
+ 
+var gaLoader = require("Gallery");
+var deLoader = require("Details");
+var exLoader = require("Extras");

@@ -1,0 +1,62 @@
+/**
+ * @author Keddon Campbell
+ */
+
+var imgFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+var imgFile = imgFolder.getDirectoryListing();
+
+
+
+
+function MakeGallery(){
+	
+	
+				var findRan  =	function randomXToY(min,max){
+									var randVal = min+(Math.random()*(max-min)); 
+									return Math.round(randVal); 
+									};
+									
+									
+					  				 var isRan = findRan(0,9);
+					  				// console.log(findRan(20,49));
+					  				 console.log("isRan is " + isRan);
+					  
+						
+				var gallWindow = Ti.UI.createWindow({
+					backgroundColor: "fff",
+					title: "",
+					});
+
+				    var viewGallery = Ti.UI.createView({
+					width: "100%",
+					height: "100%",
+					backgroundColor: "fff",
+					 });
+				
+					 var viewImage = Ti.UI.createImageView({
+					image: "images/" + imgFile[isRan],
+					bottom: 50,
+					});
+					console.log(imgFile[isRan]);
+					
+					var ranButton = Ti.UI.createView({
+						backgroundColor: "343434",
+						borderRadius: 10,
+						width: "80%",
+						height: "30",
+						bottom: 5
+						
+					});
+					
+					viewGallery.add(ranButton);
+					 gallWindow.add(viewGallery);
+					 viewGallery.add(viewImage);
+					 navWin.openWindow(gallWindow);
+
+};
+
+
+
+
+
+galleryButton.addEventListener("click", MakeGallery);

@@ -1,0 +1,104 @@
+/**
+ * @author Keddon Campbell
+ */
+
+var imgFolder = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, "images");
+var imgFile = imgFolder.getDirectoryListing();
+var ranCheck;
+var isRan;
+
+
+						var ranButton = Ti.UI.createView({
+						backgroundColor: "343434",
+						borderRadius: 10,
+						width: "80%",
+						height: "30",
+						bottom: 5
+						
+					});
+				  var viewGallery = Ti.UI.createView({
+					width: "100%",
+					height: "100%",
+					backgroundColor: "fff",
+					 });
+			
+					var findRan  =	function randomXToY(min,max){
+									var randVal = min+(Math.random()*(max-min)); 
+									return Math.round(randVal); 
+									};
+									
+
+
+					 var viewImage = Ti.UI.createImageView({
+						//image: "images/" + imgFile[isRan],
+						bottom: 50,
+						});
+					
+
+					
+					var gallWindow = Ti.UI.createWindow({
+						backgroundColor: "fff",
+						//title: imgFile[isRan],
+						});
+					
+					var ranLabel = Ti.UI.createLabel({
+						text: "Change",
+						Color: "e1e1e1",
+						});
+						
+						
+function MakeGallery(){
+					var doRan = findRan(0,9);
+					console.log(doRan);
+					viewImage.image = "images/" + imgFile[doRan];
+					gallWindow.title = imgFile[doRan];
+					ranCheck = doRan;
+					openGallery();
+			};						
+						
+function openGallery(){						
+						isRan = ranCheck;
+						ranButton.add(ranLabel);
+						viewGallery.add(ranButton);
+						gallWindow.add(viewGallery);
+						viewGallery.add(viewImage);
+						navWin.openWindow(gallWindow);
+						};
+
+function remakeGallery(){
+					var doRan = findRan(0,9);
+					if(doRan === ranCheck){
+					return;
+					console.log(doRan + "b");
+					console.log(ranCheck + "b");
+					remakeGallery();
+					};
+					viewImage.image = "images/" + imgFile[doRan];
+					gallWindow.title = imgFile[doRan];
+					ranCheck = doRan;
+					console.log(doRan + "g");
+					console.log(ranCheck + "g");
+					openGallery();
+			};
+
+					 				
+					ranButton.addEventListener("click", remakeGallery);
+					
+					
+					  		// var isRan = findRan(0,9);
+					  			// console.log(isRan);
+					  			// if(ranCheck === isRan){
+					  				// var isRan = findRan(0,9);
+					  				// console.log(isRan);
+					  		// };
+// 					  				 
+					// viewImage.image = "images/" + imgFile[isRan];
+// 					
+					// });
+					//console.log(imgFile[isRan]);
+					
+				
+					//viewGallery.add(viewImage); 
+					
+
+galleryButton.addEventListener("click", MakeGallery);
