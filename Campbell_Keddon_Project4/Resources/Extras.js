@@ -113,9 +113,9 @@ var theResult = Ti.UI.createLabel({
 			text: theResult.text
 		});
 		
- noune = theNoun.value;
- verbe = theVerb.value;
- placeu = thePlace.value;
+		 noune = theNoun.value;
+		 verbe = theVerb.value;
+ 		placeu = thePlace.value;
 		genview.add(genlabel);
 		gen.add(genview);
 		navWin.openWindow(gen);
